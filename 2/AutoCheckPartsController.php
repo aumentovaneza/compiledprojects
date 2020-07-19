@@ -10,7 +10,11 @@ use App\OrderDetails;
 use App\PartParentSku;
 use App\Logs;
 
-
+/**
+ * This controller checks if the part is below the set min amount of the inventory.
+ * If it is, the app will auto create an order for that inventory. This function also 
+ * has the functionality that allows the users to create an order manually
+ */
 class AutoCheckPartsController extends Controller
 {
     //system create order

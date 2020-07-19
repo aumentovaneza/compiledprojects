@@ -1,3 +1,4 @@
+<!-- Dynamic page component creates admin pages dynamically. It uses datalist management component and manage data components -->
 <template>
   <div class="animated fadeIn">
     <b-row>

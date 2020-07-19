@@ -15,6 +15,10 @@ use App\Repositories\Interfaces\CronjobRepositoryInterface;
 use App\Repositories\Interfaces\TagsRepositoryInterface;
 use App\Repositories\Interfaces\UserRepositoryInterface;
 
+/*** 
+ * This controller handles the actions for Cronjobs
+ * 
+*/
 class CronJobsController extends Controller
 {
     private $cronjobRepository;
@@ -37,6 +41,7 @@ class CronJobsController extends Controller
         return view('dashboard.cron-jobs')->with(['cronjobs' => $cronjobs]);
     }
 
+    //Get all cronjobs by Tag
     public function getCronJobByTag($tag)
     {
         $cronjobs = (object)$this->cronjobRepository->getCronjobsByTag($tag);
@@ -64,7 +69,7 @@ class CronJobsController extends Controller
         ));
     }
 
-    //Get all users
+    // Get all users
     public function getUsers()
     {
         return Response::json(array(
@@ -72,6 +77,7 @@ class CronJobsController extends Controller
         ));
     }
     
+    // Get the users teams
     public function getUserTeams()
     {
         return Response::json(array(
@@ -136,6 +142,7 @@ class CronJobsController extends Controller
         }
     }
 
+    //Convert time to Cronjob format
     public function translateTime(Request $request)
     {
         $cronjob = $this->cronjobRepository->translateCronTime($request->crontime);

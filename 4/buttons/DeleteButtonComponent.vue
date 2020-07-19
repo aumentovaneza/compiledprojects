@@ -1,3 +1,6 @@
+<!-- The delete button was made into component since it was one of the repeating
+functionalities for this app.  -->
+
 <template>
 <b-button type="submit" :disabled="!disabled" variant="danger" @click.preventDefault="deleteRecord" >Delete</b-button>
 </template>

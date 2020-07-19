@@ -8,7 +8,9 @@ use App\Models\User;
 use Carbon\Carbon;
 use Exception;
 use Auth;
-
+/**
+ * This controller handles the 3rd party login functionality of the app
+ */
 class ThirdPartyLoginController extends Controller
 {
     private $parameters;
@@ -27,7 +29,7 @@ class ThirdPartyLoginController extends Controller
         }
     }
 
-        public function callback($service)
+    public function callback($service)
     {
         try {
             $thisUser = Socialite::driver($service)->user();

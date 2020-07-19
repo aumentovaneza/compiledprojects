@@ -6,6 +6,9 @@ use App\Jobs\GetEWSData;
 use App\Part;
 use GuzzleHttp\Client;
 
+/**
+ * This controller handles the request actions from the EWS API
+ */
 class EWSController extends Controller {
 
     public function __construct() {
